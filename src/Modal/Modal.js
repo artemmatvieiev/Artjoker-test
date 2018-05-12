@@ -6,24 +6,17 @@ import { styleModal } from './styleModal';
 
 import './modal.css';
 
+let data = [];
+
 export class Modal extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       showModal: false,
-      defaultSelectValue: '',
+      defaultSelectValue: 'Twin',
       defaultInputNumber: 0,
-      itemsList: [
-        { id: 0, selectValue: 'Twin', inputNumber: '11' },
-        { id: 1, selectValue: 'Tripple', inputNumber: '22' },
-        { id: 2, selectValue: 'Quadro', inputNumber: '33' }
-      ],
-      changedItemList: [
-        { id: 0, selectValue: 'Twin', inputNumber: '11' },
-        { id: 1, selectValue: 'Tripple', inputNumber: '22' },
-        { id: 2, selectValue: 'Quadro', inputNumber: '33' }
-      ]
+      itemsList: []
     };
   }
 
@@ -41,17 +34,16 @@ export class Modal extends Component {
 
   saveHandler = () => {
     const { itemsList } = this.state;
+    data = [...itemsList];
     this.setState({
       showModal: false,
-      changedItemList: [...itemsList]
     });
   }
 
   closeModalHandler = () => {
-    const { changedItemList } = this.state;
     this.setState({
       showModal: false,
-      itemsList: [...changedItemList]
+      itemsList: [...data]
     });
   }
 
