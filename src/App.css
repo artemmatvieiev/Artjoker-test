@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+.ModalContainer {
+  padding: 30px 0;
+}
+
+.ModalContainer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F5F5F5;
+}
+
+.ModalContainer-header h3 {
+  margin: 0;
+  padding: 20px 10px;
+  color: #000;
+}
+
+.CustomForm {
+  display: flex;
+  align-items: center;
+}
