@@ -112,7 +112,6 @@ export class Modal extends Component {
                 label="Save"
                 primary
                 style={styleModal.buttonModalStyle}
-                disabled={this.state.itemsList.length === 0}
                 onClick={this.saveHandler}
               />
               <FlatButton
