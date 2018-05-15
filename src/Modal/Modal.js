@@ -34,16 +34,21 @@ export class Modal extends Component {
 
   saveHandler = () => {
     const { itemsList } = this.state;
-    data = [...itemsList];
-    this.setState({
-      showModal: false,
-    });
+
+    data.length = 0;
+    itemsList.forEach(item => data.push(Object.assign({}, item)));
+
+    this.setState({ showModal: false });
   }
 
   closeModalHandler = () => {
+    const oldItems = [];
+
+    data.forEach(item => oldItems.push(Object.assign({}, item)));
+
     this.setState({
       showModal: false,
-      itemsList: [...data]
+      itemsList: oldItems
     });
   }
 
