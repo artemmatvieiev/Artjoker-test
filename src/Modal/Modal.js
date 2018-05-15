@@ -6,8 +6,6 @@ import { styleModal } from './styleModal';
 
 import './modal.css';
 
-let data = [];
-
 export class Modal extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +14,8 @@ export class Modal extends Component {
       showModal: false,
       defaultSelectValue: 'Twin',
       defaultInputNumber: 0,
-      itemsList: []
+      itemsList: [],
+      data: []
     };
   }
 
@@ -33,7 +32,7 @@ export class Modal extends Component {
   }
 
   saveHandler = () => {
-    const { itemsList } = this.state;
+    const { itemsList, data } = this.state;
 
     data.length = 0;
     itemsList.forEach(item => data.push(Object.assign({}, item)));
@@ -42,6 +41,7 @@ export class Modal extends Component {
   }
 
   closeModalHandler = () => {
+    const { data } = this.state;
     const oldItems = [];
 
     data.forEach(item => oldItems.push(Object.assign({}, item)));
